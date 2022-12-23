@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="ParentPane" prefHeight="550.0" prefWidth="750.0" style="-fx-background-radius: 15;" styleClass="rootPane" stylesheets="@lightmode.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.MainController">
+    <children>
+        <AnchorPane layoutX="250.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="475.0" styleClass="ContentArea">
+            <children>
+                <Label fx:id="firstLabel" layoutX="43.0" layoutY="93.0" styleClass="Label" text="Tiếng Anh" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="NW_RESIZE" />
+                    </cursor>
+                </Label>
+                <Button fx:id="buttonSearch" alignment="CENTER" layoutX="317.0" layoutY="34.0" mnemonicParsing="false" onAction="#showListView" prefHeight="40.0" prefWidth="125.0" style="-fx-background-radius: 20;" styleClass="button1" text="       Tìm kiếm" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <TextField fx:id="searchText" layoutX="41.0" layoutY="35.0" onKeyReleased="#showListView" prefHeight="40.0" prefWidth="265.0" promptText="Bạn muốn tìm gì?" style="-fx-background-radius: 20;" styleClass="textfield1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></TextField>
+                <Button fx:id="buttonAdd" alignment="CENTER" layoutX="316.0" layoutY="260.0" mnemonicParsing="false" onAction="#addWord" prefHeight="40.0" prefWidth="125.0" style="-fx-background-radius: 20;" styleClass="button1" text="   Thêm từ" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="buttonDel" alignment="CENTER" layoutX="316.0" layoutY="316.0" mnemonicParsing="false" onAction="#deleteWord" prefHeight="40.0" prefWidth="125.0" style="-fx-background-radius: 20;" styleClass="button1" text="     Xoá từ" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <TextField fx:id="firstText" layoutX="42.0" layoutY="117.0" prefHeight="40.0" prefWidth="400.0" style="-fx-background-radius: 20;" styleClass="textfield2">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="secondText1" layoutX="42.0" layoutY="197.0" prefHeight="40.0" prefWidth="190.0" style="-fx-background-radius: 20;" styleClass="textfield2">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </TextField>
+                <Label fx:id="secondLabel" layoutX="42.0" layoutY="173.0" styleClass="Label" text="Tiếng Việt" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Button fx:id="buttonSave" alignment="CENTER" layoutX="41.0" layoutY="371.0" mnemonicParsing="false" onAction="#saveFile" prefHeight="40.0" prefWidth="125.0" style="-fx-background-radius: 20;" styleClass="button1" text=" Lưu" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <TextField fx:id="statusText" layoutX="42.0" layoutY="436.0" prefHeight="40.0" prefWidth="400.0" style="-fx-background-radius: 20;" styleClass="textfield2">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </TextField>
+                <Button fx:id="speech" alignment="CENTER" layoutX="41.0" layoutY="259.0" mnemonicParsing="false" onAction="#pronounce_E" prefHeight="40.0" prefWidth="125.0" style="-fx-background-radius: 20;" styleClass="button1" text="  Phát âm" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+                </Button>
+                <Button fx:id="buttonReset" alignment="CENTER" layoutX="316.0" layoutY="371.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="125.0" style="-fx-background-radius: 20;" styleClass="button1" text="      Cài đặt" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+                <Button fx:id="buttonFix" alignment="CENTER" layoutX="41.0" layoutY="316.0" mnemonicParsing="false" onAction="#updateWord" prefHeight="40.0" prefWidth="125.0" style="-fx-background-radius: 20;" styleClass="button1" text="Sửa từ" textAlignment="JUSTIFY" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+            <ImageView fitHeight="22.0" fitWidth="24.0" layoutX="52.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/speaker.png" />
+               </image>
+            </ImageView>
+            <FontAwesomeIconView glyphName="EDIT" layoutX="52.0" layoutY="345.0" size="24" />
+            <FontAwesomeIconView glyphName="PLUS" layoutX="328.0" layoutY="291.0" size="25" />
+            <ImageView fitHeight="22.0" fitWidth="21.0" layoutX="52.0" layoutY="380.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/save_diy.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="22.0" layoutX="328.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/delete_diy.png" />
+               </image>
+            </ImageView>
+            <FontAwesomeIconView glyphName="GEAR" layoutX="328.0" layoutY="399.0" size="25" />
+            <FontAwesomeIconView glyphName="SEARCH" layoutX="327.0" layoutY="63.0" size="25" />
+            <TextField fx:id="secondText2" layoutX="252.0" layoutY="197.0" prefHeight="40.0" prefWidth="190.0" style="-fx-background-radius: 20;" styleClass="textfield2">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </TextField>
+            </children>
+        </AnchorPane>
+            <Pane fx:id="titlePane" layoutX="-4.0" layoutY="-1.0" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="44.0" prefWidth="757.0">
+            <children>
+              <Label layoutX="41.0" layoutY="7.0" prefHeight="27.0" prefWidth="152.0" styleClass="Label" text="Dictionary_v3.2.2" textFill="#c3465d">
+                  <font>
+                      <Font name="System Bold" size="18.0" />
+                  </font>
+              </Label>
+                <FontAwesomeIconView fill="#c3465d" glyphName="MINUS" layoutX="686.0" layoutY="23.0" onMouseClicked="#minimize" size="20" />
+                <FontAwesomeIconView fill="#c3465d" glyphName="CLOSE" layoutX="713.0" layoutY="23.0" onMouseClicked="#close" size="20" />
+            </children>
+      </Pane>
+          <ListView fx:id="listView" focusTraversable="true" layoutX="25.0" layoutY="35.0" onMouseClicked="#getMeaning" prefHeight="490.0" prefWidth="200.0" />
+    </children>
+</Pane>

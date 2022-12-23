@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" style="-fx-background-radius: 15;" styleClass="rootPane" stylesheets="@login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.LoginController">
+   <children>
+      <FontAwesomeIconView fill="#31c6d4" glyphName="USER" layoutX="379.0" layoutY="210.0" size="35" text="" />
+      <FontAwesomeIconView fill="#31c6d4" glyphName="KEY" layoutX="376.0" layoutY="270.0" size="35" />
+      <Pane prefHeight="550.0" prefWidth="350.0" style="-fx-background-radius: 15;" styleClass="ContentArea" stylesheets="@login.css">
+         <children>
+            <ImageView fitHeight="382.0" fitWidth="330.0" focusTraversable="true" layoutX="6.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/logo_.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Text fill="#31c6d4" focusTraversable="true" fontSmoothingType="LCD" layoutX="465.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dictionary_v3.2">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Text>
+      <TextField fx:id="usernameField" layoutX="425.0" layoutY="180.0" prefHeight="30.0" prefWidth="250.0" promptText="Tên người dùng" style="-fx-background-color: transparent; -fx-border-color: #31C6D4; -fx-border-width: 0px 0px 2px 0px;">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <PasswordField fx:id="passwordField" layoutX="425.0" layoutY="241.0" prefHeight="30.0" prefWidth="250.0" promptText="Mật khẩu" style="-fx-background-color: transparent; -fx-border-color: #31C6D4; -fx-border-width: 0px 0px 2px 0px;">
+         <font>
+            <Font size="15.0" />
+         </font></PasswordField>
+      <Pane fx:id="titledPane" layoutY="-2.0" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="33.0" prefWidth="750.0" stylesheets="@lightmode.css">
+         <children>
+            <FontAwesomeIconView glyphName="MINUS" layoutX="693.0" layoutY="24.0" onMouseClicked="#minimize" size="20" />
+            <FontAwesomeIconView glyphName="CLOSE" layoutX="720.0" layoutY="23.0" onMouseClicked="#close" size="20" />
+         </children>
+      </Pane>
+      <TextField fx:id="notification" focusTraversable="false" layoutX="425.0" layoutY="297.0" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: #31C6D4; -fx-border-width: 0px 0px 2px 0px;">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <FontAwesomeIconView fill="#31c6d4" glyphName="BELL" layoutX="377.0" layoutY="324.0" size="30" />
+      <JFXButton fx:id="logIn" buttonType="RAISED" layoutX="491.0" layoutY="363.0" onAction="#login" prefHeight="40.0" prefWidth="118.0" ripplerFill="#8a4545" text="Đăng nhập" textFill="#31c6d4">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXButton>
+      <Pane layoutX="333.0" prefHeight="450.0" prefWidth="25.0" styleClass="ParentPane" stylesheets="@lightmode.css">
+         <children>
+            <Pane layoutX="-4.0" prefHeight="550.0" prefWidth="30.0" styleClass="rootPane" stylesheets="@login.css" />
+         </children></Pane>
+   </children>
+</Pane>

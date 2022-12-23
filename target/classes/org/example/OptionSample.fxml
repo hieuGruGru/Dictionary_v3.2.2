@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ParentPane" prefHeight="550.0" prefWidth="750.0" style="-fx-background-radius: 15;" styleClass="rootPane" stylesheets="@lightmode.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.OptionController">
+   <children>
+        <Pane fx:id="contentArea" layoutX="200.0" prefHeight="550.0" prefWidth="550.0" style="-fx-background-radius: 15;" styleClass="ContentArea">
+            <children>
+                <ImageView fx:id="ImageMode" fitHeight="408.0" fitWidth="510.0" layoutX="31.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Option_lightmode.png" />
+               </image>
+                </ImageView>
+                <Label fx:id="languageLabel" alignment="CENTER" layoutX="183.0" layoutY="461.0" prefHeight="50.0" prefWidth="200.0" styleClass="Label" text="Tiếng Anh - Tiếng Việt">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <FontAwesomeIconView glyphName="FORWARD" layoutX="501.0" layoutY="518.0" size="25" smooth="false" styleClass="icon" text="" />
+                <Label fx:id="voiceLabel" layoutX="244.0" layoutY="505.0" styleClass="Label" text="Giọng đọc 1">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <FontAwesomeIconView glyphName="BACKWARD" layoutX="42.0" layoutY="519.0" size="25" styleClass="icon" />
+                <JFXButton fx:id="logOut" focusTraversable="false" layoutX="34.0" layoutY="491.0" onAction="#logOut" prefHeight="30.0" prefWidth="42.0" text=" " />
+                <JFXButton fx:id="next" focusTraversable="false" layoutX="484.0" layoutY="493.0" onAction="#Next" prefHeight="33.0" prefWidth="42.0" text=" " />
+                <Pane fx:id="ParentPane2" prefHeight="550.0" prefWidth="25.0" styleClass="rootPane" />
+              <Pane fx:id="titledPane" layoutX="-200.0" layoutY="-3.0" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="35.0" prefWidth="750.0">
+                  <children>
+                      <FontAwesomeIconView glyphName="MINUS" layoutX="698.0" layoutY="24.0" onMouseClicked="#minimize" size="20" />
+                      <FontAwesomeIconView glyphName="CLOSE" layoutX="725.0" layoutY="23.0" onMouseClicked="#close" size="20" />
+                      <Label alignment="CENTER" layoutX="383.0" layoutY="-6.0" prefHeight="50.0" prefWidth="200.0" styleClass="Label" text="Cài đặt">
+                          <font>
+                              <Font name="System Bold" size="17.0" />
+                          </font>
+                      </Label>
+                  </children>
+              </Pane>
+            </children>
+      </Pane>
+        <VBox fx:id="Vbox1" layoutY="6.0" prefHeight="189.0" prefWidth="225.0">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="225.0" styleClass="Label" text="Giao diện">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </Label>
+                <JFXButton onAction="#switchLightTheme" prefHeight="50.0" prefWidth="225.0" styleClass="JFXButton" text="Màu sáng">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton onAction="#switchWarmTheme" prefHeight="50.0" prefWidth="225.0" styleClass="JFXButton" text="Màu ấm">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton onAction="#switchDarkTheme" prefHeight="50.0" prefWidth="225.0" styleClass="JFXButton" text="Màu tối">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </VBox>
+        <VBox layoutY="217.0" prefHeight="138.0" prefWidth="225.0">
+            <children>
+                <Label alignment="CENTER" prefHeight="50.0" prefWidth="225.0" styleClass="Label" text="Ngôn ngữ">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </Label>
+                <JFXButton onAction="#EToV" prefHeight="50.0" prefWidth="225.0" styleClass="JFXButton" text="Anh - Việt">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton onAction="#VToE" prefHeight="50.0" prefWidth="225.0" styleClass="JFXButton" text="Việt - Anh">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </VBox>
+        <VBox layoutY="389.0" prefHeight="150.0" prefWidth="225.0">
+            <children>
+                <Label alignment="CENTER" prefHeight="50.0" prefWidth="225.0" styleClass="Label" text="Giọng đọc">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </Label>
+                <JFXButton onAction="#changeVoice1" prefHeight="50.0" prefWidth="225.0" styleClass="JFXButton" text="Giọng đọc 1">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton onAction="#changeVoice2" prefHeight="50.0" prefWidth="225.0" styleClass="JFXButton" text="Giọng đọc 2">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,8 @@
+.rootPane{
+    -fx-background-color: #CBF1F5;
+}
+
+.ContentArea{
+    -fx-background-color: linear-gradient(to bottom right, #90C8AC, #73A9AD);
+     -fx-background-radius: 15;
+}
