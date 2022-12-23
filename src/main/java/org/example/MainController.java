@@ -163,8 +163,8 @@ public class MainController implements Initializable{
             } else {
                 statusText.setText("Từ " + word + " đã tồn tại trong từ điển");
             }
-            reloadList();
         }
+        reloadList();
     }
 
     @FXML
@@ -192,30 +192,33 @@ public class MainController implements Initializable{
     public void updateWord(ActionEvent event) throws IllegalAccessException {
 
         String word = listView.getSelectionModel().getSelectedItem();
-        String meaning1 = secondText1.getText();
-        String meaning2 = secondText2.getText().trim();
-        System.out.println(word);
-        String currentMeaning1 = DictionaryMgmt.search(word).getMeaning1();
-        String currentMeaning2 = DictionaryMgmt.search(word).getMeaning2();
-        if (meaning1.equals(currentMeaning1)) {
-            if (!meaning2.equals(currentMeaning2) && !meaning2.equals(currentMeaning1)) {
-                DictionaryMgmt.insert(word, meaning1, meaning2);
-                if (currentMeaning2.equals("")) {
-                    statusText.setText("Đã thêm nghĩa " + meaning2);
+        if (word == null) {
+            statusText.setText("Hãy chọn từ để sửa");
+        } else {
+            String meaning1 = secondText1.getText();
+            String meaning2 = secondText2.getText().trim();
+            String currentMeaning1 = DictionaryMgmt.search(word).getMeaning1();
+            String currentMeaning2 = DictionaryMgmt.search(word).getMeaning2();
+            if (meaning1.equals(currentMeaning1)) {
+                if (!meaning2.equals(currentMeaning2) && !meaning2.equals(currentMeaning1)) {
+                    DictionaryMgmt.insert(word, meaning1, meaning2);
+                    if (currentMeaning2.equals("")) {
+                        statusText.setText("Đã thêm nghĩa " + meaning2);
+                    } else {
+                        statusText.setText("Đã sửa nghĩa " + currentMeaning2 + " thành " + meaning2);
+                    }
                 } else {
-                    statusText.setText("Đã sửa nghĩa " + currentMeaning2 + " thành " + meaning2);
+                    if (meaning2.equals(currentMeaning2)) {
+                        statusText.setText("Hãy thêm nghĩa thứ 2 khác cái cũ");
+                    } else {
+                        secondText2.setText(currentMeaning2);
+                        statusText.setText("Hãy thêm nghĩa thứ 2 khác nghĩa thứ 1");
+                    }
                 }
             } else {
-                if (meaning2.equals(currentMeaning2)) {
-                    statusText.setText("Hãy thêm nghĩa thứ 2 khác cái cũ");
-                } else {
-                    secondText2.setText(currentMeaning2);
-                    statusText.setText("Hãy thêm nghĩa thứ 2 khác nghĩa thứ 1");
-                }
+                secondText1.setText(currentMeaning1);
+                statusText.setText("Chỉ có thể chỉnh sửa nghĩa thứ 2");
             }
-        } else {
-            secondText1.setText(currentMeaning1);
-            statusText.setText("Chỉ có thể chỉnh sửa nghĩa thứ 2");
         }
     }
 
